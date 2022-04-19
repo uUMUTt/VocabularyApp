@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#252222"
+    tools:context=".WrongFragment">
+
+
+    <Button
+        android:id="@+id/btnContinueCorrect"
+        android:layout_width="201dp"
+        android:layout_height="67dp"
+        android:layout_marginBottom="221dp"
+        android:text="devam"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEnglishTurkish" />
+
+    <TextView
+        android:id="@+id/tvEnglishTurkish"
+        android:layout_width="395dp"
+        android:layout_height="113dp"
+        android:layout_marginBottom="71dp"
+        android:gravity="center"
+        android:text="Car = Araba"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnContinueCorrect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWrongAnswer" />
+
+    <TextView
+        android:id="@+id/tvWrongAnswer"
+        android:layout_width="266dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="191dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="84dp"
+        android:gravity="center"
+        android:text="YANLIŞ"
+        android:textColor="#FA0155"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvEnglishTurkish"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/firstFragment">
+
+    <fragment
+        android:id="@+id/correctFragment"
+        android:name="com.example.vocabularyapp.CorrectFragment"
+        android:label="fragment_correct_wrong"
+        tools:layout="@layout/fragment_correct" >
+        <action
+            android:id="@+id/action_correctWrongFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+        <argument
+            android:name="turkishWord"
+            app:argType="string" />
+        <argument android:name="pointer"
+            app:argType="integer" />
+        <argument
+            android:name="numOfWords"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_correctFragment_to_quizAndFragment"
+            app:destination="@id/quizAndFragment" />
+        <argument android:name="numOfCorrect"
+            app:argType="integer" />
+        <argument
+            android:name="englishWord"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/newWordFragment"
+        android:name="com.example.vocabularyapp.NewWordFragment"
+        android:label="fragment_new_word"
+        tools:layout="@layout/fragment_new_word" >
+        <action
+            android:id="@+id/action_newWordFragment_to_firstFragment"
+            app:destination="@id/firstFragment"
+            app:enterAnim="@anim/from_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.example.vocabularyapp.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_correctWrongFragment"
+            app:destination="@id/correctFragment" />
+        <action
+            android:id="@+id/action_quizFragment_to_firstFragment"
+            app:destination="@id/firstFragment"
+            app:enterAnim="@anim/from_left" />
+        <action
+            android:id="@+id/action_quizFragment_to_wrongFragment"
+            app:destination="@id/wrongFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizAndFragment"
+        android:name="com.example.vocabularyapp.QuizAndFragment"
+        android:label="fragment_quiz_and"
+        tools:layout="@layout/fragment_quiz_and" >
+        <action
+            android:id="@+id/action_quizAndFragment_to_firstFragment"
+            app:destination="@id/firstFragment" />
+        <action
+            android:id="@+id/action_quizAndFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+        <argument android:name="numOfCorrect"
+            app:argType="integer" />
+        <argument
+            android:name="numOfWords"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.vocabularyapp.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_firstFragment_to_quizFragment"
+            app:destination="@id/quizFragment"
+            app:enterAnim="@anim/from_right" />
+        <action
+            android:id="@+id/action_firstFragment_to_newWordFragment"
+            app:destination="@id/newWordFragment"
+            app:enterAnim="@anim/from_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/wrongFragment"
+        android:name="com.example.vocabularyapp.WrongFragment"
+        android:label="WrongFragment" >
+        <action
+            android:id="@+id/action_wrongFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+        <argument
+            android:name="turkishWord"
+            app:argType="string" />
+        <argument
+            android:name="pointer"
+            app:argType="integer" />
+        <argument android:name="numOfWords"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_wrongFragment_to_quizAndFragment"
+            app:destination="@id/quizAndFragment" />
+        <argument
+            android:name="numOfCorrect"
+            app:argType="integer" />
+        <argument
+            android:name="englishWord"
+            app:argType="string" />
+    </fragment>
+</navigation>
